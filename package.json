@@ -1,0 +1,22 @@
+{
+  "name": "apk",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/szlukasz12/aplikacja.git"
+  },
+  "author": "Łukasz szostek",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/szlukasz12/aplikacja/issues"
+  },
+  "homepage": "https://github.com/szlukasz12/aplikacja#readme",
+  "dependencies": {
+    "electron": "^21.1.0"
+  }
+}
