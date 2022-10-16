@@ -17,7 +17,7 @@
  <script type="text/javascript" src="webcamjs/webcam.min.js"></script>
 
  <script language="JavaScript">
-  function configure(){
+  
 Webcam.set({
    width: 320,
    height: 240,
@@ -25,7 +25,7 @@ Webcam.set({
    jpeg_quality: 90
 });
 Webcam.attach('#camera');
-  }
+  
 function take_snapshot(){
 Webcam.snap( function(data_uri) {
        // display results in page
