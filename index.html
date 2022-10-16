@@ -3,11 +3,52 @@
   <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="styl.css"/>
-    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
     <title>Hello World!</title>
   </head>
-  <body>
-    <h1 id="dd">Hello World!</h1>
+  <body> 
+ 
+ <div id="camera"></div>
+ <div id="results"></div>
+ <input type=button value="Configure" onClick="configure()">
+ <input type=button value="Take Snapshot" onClick="take_snapshot()">
+ <input type=button value="Save Snapshot" onClick="save_Snap()">
+ <a href="index_copy.html">dsafsad</a>
+
+ <script type="text/javascript" src="webcamjs/webcam.min.js"></script>
+
+ <script language="JavaScript">
+  function configure(){
+Webcam.set({
+   width: 320,
+   height: 240,
+   image_format: 'jpeg',
+   jpeg_quality: 90
+});
+Webcam.attach('#camera');
+  }
+function take_snapshot(){
+Webcam.snap( function(data_uri) {
+       // display results in page
+       document.getElementById('results').innerHTML = 
+        '<img id="image" src="'+data_uri+'"/>';
+    } );
+
+
+  }
+
+  function save_Snap(){
+   // Get base64 value from <img id='imageprev'> source
+   var base64image = document.getElementById("image").src;
+
+   Webcam.upload( base64image, 'upload.php', function(code, text) {
+        console.log('Save successfully');
+       console.log(text);
+   });
+
+  }
+</script>
+  
+ 
+ 
   </body>
 </html>

@@ -1,7 +1,14 @@
 body{
-    background-color: black;
+   
 }
 #dd
 {
     color:red;
 }
+#camera{
+    width: 320px;
+    height: 240px;
+    border: 1px solid black;
+}
+
+
