@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styl.css"/>
+    <title>Hello World!</title>
+  </head>
+  <body> 
+ 
+ <input type="file" onchange="uploadFile(this)" />
+
+
+ <script language="JavaScript">
+function uploadFile(inputElement) {
+  var file = inputElement.files[0];
+  var reader = new FileReader();
+  reader.onloadend = function() {
+    console.log('Encoded Base 64 File String:', reader.result);
+    
+    /******************* for Binary ***********************/
+    var data=(reader.result).split(',')[1];
+     var binaryBlob = atob(data);
+     console.log('Encoded Binary File String:', binaryBlob);
+  }
+  reader.readAsDataURL(file);
+}
+
+</script>
+  
+ 
+ 
+  </body>
+</html>
